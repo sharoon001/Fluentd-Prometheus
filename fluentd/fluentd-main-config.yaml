@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fluentd-main
+  labels:
+    name: fluentd-main
+data:
+  fluent.conf: |-
+    # do not collect fluentd logs to avoid infinite loops.
+    <label @FLUENT_LOG>
+      <match **>
+        @type null
+        @id ignore_fluent_logs
+      </match>
+    </label>
+
+    @include config.d/*.conf
+    @include fluentd-prometheus-conf.d/*
