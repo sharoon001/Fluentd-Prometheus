@@ -24,7 +24,7 @@ data:
     receivers:
     - name: alert-emailer
       email_configs:
-      - to: demo@devopscube.com
+      - to: sharooncheruparambil@gmail.com
         send_resolved: false
         from: from-email@email.com
         smarthost: smtp.eample.com:25
